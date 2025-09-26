@@ -1,0 +1,197 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Quicksand:wght@300..700&display=swap");
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  width: 100vw;
+  position: fixed;
+  background-image: linear-gradient(90deg, #e5d6b8, #e6ddd3, #dfe7e7);
+  background-attachment: fixed;
+}
+
+.content {
+  height: 100vh;
+  width: 100vw;
+}
+
+@font-face {
+  font-family: "logo";
+  font-style: normal;
+  font-weight: bolder;
+  src: url("/font/logo.TTF") format("truetype");
+}
+
+.content > .text {
+  height: 30%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: #333333d1;
+}
+
+.content > .text > h1 {
+  font-size: 3rem;
+  width: 100%;
+  font-family: "logo", Arial, sans-serif;
+  text-transform: uppercase;
+  background: linear-gradient(
+    90deg,
+    #999999,
+    #cccccc,
+    #999999,
+    #cccccc,
+    #a0a0a0
+  );
+
+  background-clip: text;
+  color: transparent;
+  word-spacing: 1rem;
+  opacity: 0;
+  animation-name: heading-fade, heading-shine;
+  animation-duration: 1s, 2s;
+  animation-delay: 0s 2s;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease-in, cubic-bezier(0.59, 0.25, 0.34, 0.93);
+  background-size: 200% 100%;
+}
+
+@keyframes heading-fade {
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes heading-shine {
+  0% {
+    background-position: 100% 0;
+  }
+  100% {
+    background-position: 0 100%;
+  }
+}
+
+@media only screen and (min-width: 600px) {
+  .content > .text > h1 {
+    font-size: 7rem;
+  }
+}
+
+.content > .text > p {
+  font-size: 0.9rem;
+  width: 100%;
+  font-family: "Quicksand", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+  opacity: 0;
+  animation-name: slide-in;
+  animation-duration: 1.5s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes slide-in {
+  from {
+    transform: translateY(1rem);
+  }
+  to {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+}
+
+@media only screen and (min-width: 600px) {
+  .content > .text > p {
+    font-size: 1.2rem;
+  }
+}
+
+.content > .image {
+  height: 50%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 5rem;
+}
+
+.car {
+  height: 19rem;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* car image */
+.car > .range-rover {
+  width: 30rem;
+  object-fit: cover;
+  object-position: center;
+  z-index: 1;
+}
+
+@media only screen and (min-width: 600px) {
+  .range-rover {
+    width: 50rem;
+  }
+}
+
+.car > .shadow {
+  height: 1.1rem;
+  width: 20rem;
+  margin-left: 1rem;
+  position: absolute;
+  background-image: linear-gradient(45deg, #000000, #000000);
+  filter: blur(2px);
+  top: 81.8%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(2deg);
+  z-index: 0;
+  border-top-left-radius: 100%;
+  border-bottom-left-radius: 100%;
+  border-top-right-radius: 100%;
+  border-bottom-right-radius: 100%;
+}
+
+.content > .action {
+  height: 20%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.content > .action > button {
+  border: none;
+  padding: 0.5rem 2rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 400;
+  background-color: #202020;
+  color: #ffffff;
+  font-size: 0.8rem;
+  font-family: "Quicksand", sans-serif;
+  font-weight: bold;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.content > .action > button:hover {
+  background-color: transparent;
+  border: solid black 2px;
+  color: #202020;
+  transition-duration: 0.5s;
+  transition-timing-function: ease;
+}
